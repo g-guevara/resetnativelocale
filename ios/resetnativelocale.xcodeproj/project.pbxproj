@@ -7,38 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01B4EBE5FBB045E9B6C89057 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA9A5E4112464C9E427413 /* noop-file.swift */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		340DB5CF2D9730C1004ADA83 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340DB5CE2D9730C1004ADA83 /* WidgetKit.framework */; };
-		340DB5D12D9730C1004ADA83 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340DB5D02D9730C1004ADA83 /* SwiftUI.framework */; };
-		340DB5E22D9730C2004ADA83 /* myWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 340DB5CD2D9730C1004ADA83 /* myWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1AFD7BB60D4EE20F8D7589BA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E687E8870DCFF295C380D358 /* PrivacyInfo.xcprivacy */; };
+		340DB5F32D973AC8004ADA83 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340DB5F22D973AC8004ADA83 /* WidgetKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		340DB5F52D973AC8004ADA83 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340DB5F42D973AC8004ADA83 /* SwiftUI.framework */; };
+		340DB6062D973AC9004ADA83 /* myWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 340DB5F12D973AC8004ADA83 /* myWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		340DB60F2D973B5C004ADA83 /* SharedStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 340DB60E2D973B5C004ADA83 /* SharedStorage.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		96905EF65AED1B983A6B3ABC /* libPods-resetnativelocale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-resetnativelocale.a */; };
+		ACECFF74CEA544538391AA79 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ADDC0C4A274CD891E2D2D7 /* noop-file.swift */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		FEBFC0EEB2C16B30CB4B01AE /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C36AFA4BE1D809DC49B762E0 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		340DB5E02D9730C2004ADA83 /* PBXContainerItemProxy */ = {
+		340DB6042D973AC9004ADA83 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 340DB5CC2D9730C1004ADA83;
+			remoteGlobalIDString = 340DB5F02D973AC8004ADA83;
 			remoteInfo = myWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		340DB5E32D9730C2004ADA83 /* Embed Foundation Extensions */ = {
+		340DB6072D973AC9004ADA83 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				340DB5E22D9730C2004ADA83 /* myWidgetExtension.appex in Embed Foundation Extensions */,
+				340DB6062D973AC9004ADA83 /* myWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,33 +53,36 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = resetnativelocale/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = resetnativelocale/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = resetnativelocale/main.m; sourceTree = "<group>"; };
-		340DB5CD2D9730C1004ADA83 /* myWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = myWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		340DB5CE2D9730C1004ADA83 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		340DB5D02D9730C1004ADA83 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		340DB5F12D973AC8004ADA83 /* myWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = myWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		340DB5F22D973AC8004ADA83 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		340DB5F42D973AC8004ADA83 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		340DB60C2D973AEF004ADA83 /* myWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myWidgetExtension.entitlements; sourceTree = "<group>"; };
+		340DB60D2D973B54004ADA83 /* SharedStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedStorage.h; sourceTree = "<group>"; };
+		340DB60E2D973B5C004ADA83 /* SharedStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharedStorage.m; sourceTree = "<group>"; };
 		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-resetnativelocale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-resetnativelocale.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5ACA9A5E4112464C9E427413 /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "resetnativelocale/noop-file.swift"; sourceTree = "<group>"; };
+		5A41E870850D4FFA8FCF871B /* resetnativelocale-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "resetnativelocale-Bridging-Header.h"; path = "resetnativelocale/resetnativelocale-Bridging-Header.h"; sourceTree = "<group>"; };
 		6C2E3173556A471DD304B334 /* Pods-resetnativelocale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-resetnativelocale.debug.xcconfig"; path = "Target Support Files/Pods-resetnativelocale/Pods-resetnativelocale.debug.xcconfig"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-resetnativelocale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-resetnativelocale.release.xcconfig"; path = "Target Support Files/Pods-resetnativelocale/Pods-resetnativelocale.release.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = resetnativelocale/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		C36AFA4BE1D809DC49B762E0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = resetnativelocale/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		C0ADDC0C4A274CD891E2D2D7 /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "resetnativelocale/noop-file.swift"; sourceTree = "<group>"; };
+		E687E8870DCFF295C380D358 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = resetnativelocale/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-resetnativelocale/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		FC13C3362F904030A553565C /* resetnativelocale-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "resetnativelocale-Bridging-Header.h"; path = "resetnativelocale/resetnativelocale-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		340DB5E62D9730C2004ADA83 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		340DB60A2D973AC9004ADA83 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 340DB5CC2D9730C1004ADA83 /* myWidgetExtension */;
+			target = 340DB5F02D973AC8004ADA83 /* myWidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		340DB5D22D9730C1004ADA83 /* myWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (340DB5E62D9730C2004ADA83 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = myWidget; sourceTree = "<group>"; };
+		340DB5F62D973AC8004ADA83 /* myWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (340DB60A2D973AC9004ADA83 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = myWidget; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,12 +94,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		340DB5CA2D9730C1004ADA83 /* Frameworks */ = {
+		340DB5EE2D973AC8004ADA83 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				340DB5D12D9730C1004ADA83 /* SwiftUI.framework in Frameworks */,
-				340DB5CF2D9730C1004ADA83 /* WidgetKit.framework in Frameworks */,
+				340DB5F52D973AC8004ADA83 /* SwiftUI.framework in Frameworks */,
+				340DB5F32D973AC8004ADA83 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +109,8 @@
 		13B07FAE1A68108700A75B9A /* resetnativelocale */ = {
 			isa = PBXGroup;
 			children = (
+				340DB60E2D973B5C004ADA83 /* SharedStorage.m */,
+				340DB60D2D973B54004ADA83 /* SharedStorage.h */,
 				BB2F792B24A3F905000567C9 /* Supporting */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -112,9 +118,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				5ACA9A5E4112464C9E427413 /* noop-file.swift */,
-				FC13C3362F904030A553565C /* resetnativelocale-Bridging-Header.h */,
-				C36AFA4BE1D809DC49B762E0 /* PrivacyInfo.xcprivacy */,
+				C0ADDC0C4A274CD891E2D2D7 /* noop-file.swift */,
+				5A41E870850D4FFA8FCF871B /* resetnativelocale-Bridging-Header.h */,
+				E687E8870DCFF295C380D358 /* PrivacyInfo.xcprivacy */,
 			);
 			name = resetnativelocale;
 			sourceTree = "<group>";
@@ -124,8 +130,8 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				58EEBF8E8E6FB1BC6CAF49B5 /* libPods-resetnativelocale.a */,
-				340DB5CE2D9730C1004ADA83 /* WidgetKit.framework */,
-				340DB5D02D9730C1004ADA83 /* SwiftUI.framework */,
+				340DB5F22D973AC8004ADA83 /* WidgetKit.framework */,
+				340DB5F42D973AC8004ADA83 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,9 +146,10 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				340DB60C2D973AEF004ADA83 /* myWidgetExtension.entitlements */,
 				13B07FAE1A68108700A75B9A /* resetnativelocale */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				340DB5D22D9730C1004ADA83 /* myWidget */,
+				340DB5F62D973AC8004ADA83 /* myWidget */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D65327D7A22EEC0BE12398D9 /* Pods */,
@@ -157,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* resetnativelocale.app */,
-				340DB5CD2D9730C1004ADA83 /* myWidgetExtension.appex */,
+				340DB5F12D973AC8004ADA83 /* myWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,45 +211,45 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "resetnativelocale" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				599263AEFE849B988A8B189A /* [Expo] Configure project */,
+				9B64C00244C82C04CD2E156A /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				7C7E51AC91F851759D2D3AE2 /* [CP] Embed Pods Frameworks */,
-				340DB5E32D9730C2004ADA83 /* Embed Foundation Extensions */,
+				B13FBD567C469AF7E0F421CB /* [CP] Embed Pods Frameworks */,
+				340DB6072D973AC9004ADA83 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				340DB5E12D9730C2004ADA83 /* PBXTargetDependency */,
+				340DB6052D973AC9004ADA83 /* PBXTargetDependency */,
 			);
 			name = resetnativelocale;
 			productName = resetnativelocale;
 			productReference = 13B07F961A680F5B00A75B9A /* resetnativelocale.app */;
 			productType = "com.apple.product-type.application";
 		};
-		340DB5CC2D9730C1004ADA83 /* myWidgetExtension */ = {
+		340DB5F02D973AC8004ADA83 /* myWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 340DB5E72D9730C2004ADA83 /* Build configuration list for PBXNativeTarget "myWidgetExtension" */;
+			buildConfigurationList = 340DB60B2D973AC9004ADA83 /* Build configuration list for PBXNativeTarget "myWidgetExtension" */;
 			buildPhases = (
-				340DB5C92D9730C1004ADA83 /* Sources */,
-				340DB5CA2D9730C1004ADA83 /* Frameworks */,
-				340DB5CB2D9730C1004ADA83 /* Resources */,
+				340DB5ED2D973AC8004ADA83 /* Sources */,
+				340DB5EE2D973AC8004ADA83 /* Frameworks */,
+				340DB5EF2D973AC8004ADA83 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				340DB5D22D9730C1004ADA83 /* myWidget */,
+				340DB5F62D973AC8004ADA83 /* myWidget */,
 			);
 			name = myWidgetExtension;
 			packageProductDependencies = (
 			);
 			productName = myWidgetExtension;
-			productReference = 340DB5CD2D9730C1004ADA83 /* myWidgetExtension.appex */;
+			productReference = 340DB5F12D973AC8004ADA83 /* myWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -257,7 +264,7 @@
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1250;
 					};
-					340DB5CC2D9730C1004ADA83 = {
+					340DB5F02D973AC8004ADA83 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -276,7 +283,7 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* resetnativelocale */,
-				340DB5CC2D9730C1004ADA83 /* myWidgetExtension */,
+				340DB5F02D973AC8004ADA83 /* myWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -289,11 +296,11 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				FEBFC0EEB2C16B30CB4B01AE /* PrivacyInfo.xcprivacy in Resources */,
+				1AFD7BB60D4EE20F8D7589BA /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		340DB5CB2D9730C1004ADA83 /* Resources */ = {
+		340DB5EF2D973AC8004ADA83 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -340,7 +347,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		599263AEFE849B988A8B189A /* [Expo] Configure project */ = {
+		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-resetnativelocale/Pods-resetnativelocale-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/EXConstants.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/ExpoConstants_privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoFileSystem/ExpoFileSystem_privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoSystemUI/ExpoSystemUI_privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/RCT-Folly/RCT-Folly_privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/RNCAsyncStorage/RNCAsyncStorage_resources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/React-Core_privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact/React-cxxreact_privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/boost/boost_privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/glog/glog_privacy.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EXConstants.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoConstants_privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoFileSystem_privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoSystemUI_privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCT-Folly_privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RNCAsyncStorage_resources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/React-Core_privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/React-cxxreact_privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/boost_privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/glog_privacy.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-resetnativelocale/Pods-resetnativelocale-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B64C00244C82C04CD2E156A /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -359,7 +402,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-resetnativelocale/expo-configure-project.sh\"\n";
 		};
-		7C7E51AC91F851759D2D3AE2 /* [CP] Embed Pods Frameworks */ = {
+		B13FBD567C469AF7E0F421CB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -377,40 +420,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-resetnativelocale/Pods-resetnativelocale-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-resetnativelocale/Pods-resetnativelocale-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/EXConstants.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/ExpoConstants_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoFileSystem/ExpoFileSystem_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoSystemUI/ExpoSystemUI_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/RCT-Folly/RCT-Folly_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/React-Core_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact/React-cxxreact_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/boost/boost_privacy.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/glog/glog_privacy.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EXConstants.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoConstants_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoFileSystem_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoSystemUI_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCT-Folly_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/React-Core_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/React-cxxreact_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/boost_privacy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/glog_privacy.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-resetnativelocale/Pods-resetnativelocale-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -419,13 +428,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				340DB60F2D973B5C004ADA83 /* SharedStorage.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */,
-				01B4EBE5FBB045E9B6C89057 /* noop-file.swift in Sources */,
+				ACECFF74CEA544538391AA79 /* noop-file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		340DB5C92D9730C1004ADA83 /* Sources */ = {
+		340DB5ED2D973AC8004ADA83 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -435,10 +445,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		340DB5E12D9730C2004ADA83 /* PBXTargetDependency */ = {
+		340DB6052D973AC9004ADA83 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 340DB5CC2D9730C1004ADA83 /* myWidgetExtension */;
-			targetProxy = 340DB5E02D9730C2004ADA83 /* PBXContainerItemProxy */;
+			target = 340DB5F02D973AC8004ADA83 /* myWidgetExtension */;
+			targetProxy = 340DB6042D973AC9004ADA83 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -511,7 +521,7 @@
 			};
 			name = Release;
 		};
-		340DB5E42D9730C2004ADA83 /* Debug */ = {
+		340DB6082D973AC9004ADA83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -524,6 +534,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = myWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -555,7 +566,7 @@
 			};
 			name = Debug;
 		};
-		340DB5E52D9730C2004ADA83 /* Release */ = {
+		340DB6092D973AC9004ADA83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -568,6 +579,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = myWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -728,11 +740,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		340DB5E72D9730C2004ADA83 /* Build configuration list for PBXNativeTarget "myWidgetExtension" */ = {
+		340DB60B2D973AC9004ADA83 /* Build configuration list for PBXNativeTarget "myWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				340DB5E42D9730C2004ADA83 /* Debug */,
-				340DB5E52D9730C2004ADA83 /* Release */,
+				340DB6082D973AC9004ADA83 /* Debug */,
+				340DB6092D973AC9004ADA83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, TextInput, Button, FlatList, StyleSheet } from 'react-native';
+import { Text, View, TextInput, Button, FlatList, StyleSheet, NativeModules, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// Define an interface for our text item structure
+// Define una interfaz para nuestra estructura de elemento de texto
 interface TextItem {
   id: string;
   text: string;
 }
 
 export default function Index() {
-  // State for the text input and the list of saved texts with proper typing
+  // Estado para el input de texto y la lista de textos guardados con tipado adecuado
   const [inputText, setInputText] = useState<string>('');
   const [savedTexts, setSavedTexts] = useState<TextItem[]>([]);
 
-  // Load saved texts from AsyncStorage when the component mounts
+  // Cargar textos guardados desde AsyncStorage cuando el componente se monta
   useEffect(() => {
     loadSavedTexts();
   }, []);
 
-  // Function to load saved texts from AsyncStorage
+  // Función para cargar textos guardados desde AsyncStorage
   const loadSavedTexts = async () => {
     try {
       const storedTexts = await AsyncStorage.getItem('savedTexts');
@@ -30,32 +30,81 @@ export default function Index() {
     }
   };
 
-  // Function to save a new text
+  // Función para guardar datos accesibles por el widget
+  const saveTextForWidget = async (texts: TextItem[]) => {
+    try {
+      // Guardar en AsyncStorage normal
+      await AsyncStorage.setItem('savedTexts', JSON.stringify(texts));
+      
+      // También guardar en UserDefaults compartidos para el widget
+      const userDefaultsString = JSON.stringify(texts);
+      
+      // Guardar en UserDefaults en un App Group
+      if (NativeModules.SharedStorage) {
+        NativeModules.SharedStorage.set(
+          "savedTexts",
+          userDefaultsString
+        );
+      } else {
+        console.log("SharedStorage module not available");
+      }
+    } catch (error) {
+      console.error('Error saving text for widget:', error);
+    }
+  };
+
+  // Función para guardar un nuevo texto
   const saveText = async () => {
     if (inputText.trim()) {
-      // Create a new text object with an ID and the input text
+      // Crear un nuevo objeto de texto con un ID y el texto de entrada
       const newText: TextItem = {
         id: Date.now().toString(),
         text: inputText
       };
       
-      // Update the state with the new text
+      // Actualizar el estado con el nuevo texto
       const updatedTexts = [...savedTexts, newText];
       setSavedTexts(updatedTexts);
       
-      // Save to AsyncStorage
+      // Guardar en AsyncStorage y para el widget
       try {
-        await AsyncStorage.setItem('savedTexts', JSON.stringify(updatedTexts));
+        await saveTextForWidget(updatedTexts);
       } catch (error) {
         console.error('Error saving text:', error);
       }
       
-      // Clear the input field
+      // Limpiar el campo de entrada
       setInputText('');
     }
   };
 
-  // Function to render each item in the list with proper typing
+  // Función para borrar todos los textos
+  const clearAllTexts = () => {
+    Alert.alert(
+      "Confirmar",
+      "¿Estás seguro de que deseas borrar todos los textos?",
+      [
+        {
+          text: "Cancelar",
+          style: "cancel"
+        },
+        {
+          text: "Borrar Todo",
+          onPress: async () => {
+            setSavedTexts([]);
+            try {
+              await saveTextForWidget([]);
+            } catch (error) {
+              console.error('Error clearing texts:', error);
+            }
+          },
+          style: "destructive"
+        }
+      ]
+    );
+  };
+
+  // Función para renderizar cada elemento en la lista con tipado adecuado
   const renderItem = ({ item }: { item: TextItem }) => (
     <View style={styles.item}>
       <Text>{item.text}</Text>
@@ -74,7 +123,15 @@ export default function Index() {
         <Button title="Guardar" onPress={saveText} />
       </View>
       
-      <Text style={styles.listHeader}>Textos guardados:</Text>
+      <View style={styles.headerContainer}>
+        <Text style={styles.listHeader}>Textos guardados:</Text>
+        <Button 
+          title="Borrar Todo" 
+          onPress={clearAllTexts} 
+          color="#FF3B30" 
+        />
+      </View>
+
       <FlatList
         data={savedTexts}
         renderItem={renderItem}
@@ -102,10 +159,15 @@ const styles = StyleSheet.create({
     marginRight: 10,
     borderRadius: 5,
   },
+  headerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
   listHeader: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 10,
   },
   list: {
     flex: 1,

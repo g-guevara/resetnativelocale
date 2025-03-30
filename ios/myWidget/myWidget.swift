@@ -1,57 +1,87 @@
-//
-//  myWidget.swift
-//  myWidget
-//
-//  Created by Guillermo Guevara on 28-03-25.
-//
-
 import WidgetKit
 import SwiftUI
 
+// Modelo para los textos guardados
+struct SavedText: Identifiable, Codable {
+    let id: String
+    let text: String
+}
+
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
+        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent(), savedTexts: [])
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+        let savedTexts = fetchSavedTexts()
+        return SimpleEntry(date: Date(), configuration: configuration, savedTexts: savedTexts)
     }
     
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
         var entries: [SimpleEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
+        let savedTexts = fetchSavedTexts()
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
-        }
+        let entry = SimpleEntry(date: currentDate, configuration: configuration, savedTexts: savedTexts)
+        entries.append(entry)
 
-        return Timeline(entries: entries, policy: .atEnd)
+        return Timeline(entries: entries, policy: .after(Calendar.current.date(byAdding: .minute, value: 15, to: currentDate)!))
     }
-
-//    func relevances() async -> WidgetRelevances<ConfigurationAppIntent> {
-//        // Generate a list containing the contexts this widget is relevant in.
-//    }
+    
+    // Función para obtener los textos guardados del storage compartido
+    private func fetchSavedTexts() -> [SavedText] {
+        guard let sharedDefaults = UserDefaults(suiteName: "group.com.ggg02.resetnativelocale.shared"),
+              let savedTextsString = sharedDefaults.string(forKey: "savedTexts"),
+              let data = savedTextsString.data(using: .utf8) else {
+            return []
+        }
+        
+        do {
+            let decodedTexts = try JSONDecoder().decode([SavedText].self, from: data)
+            return decodedTexts
+        } catch {
+            print("Error decoding saved texts: \(error)")
+            return []
+        }
+    }
 }
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationAppIntent
+    let savedTexts: [SavedText]
 }
 
 struct myWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+        VStack(alignment: .leading) {
+            Text("Textos guardados:")
+                .font(.headline)
+                .padding(.bottom, 4)
+            
+            if entry.savedTexts.isEmpty {
+                Text("No hay textos guardados")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            } else {
+                // Mostrar solo los 3 primeros textos como máximo
+                ForEach(entry.savedTexts.prefix(3)) { text in
+                    Text(text.text)
+                        .font(.caption)
+                        .lineLimit(1)
+                        .padding(.vertical, 2)
+                }
+                
+                if entry.savedTexts.count > 3 {
+                    Text("+ \(entry.savedTexts.count - 3) más...")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+            }
         }
+        .padding()
     }
 }
 
@@ -83,6 +113,9 @@ extension ConfigurationAppIntent {
 #Preview(as: .systemSmall) {
     myWidget()
 } timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
+    SimpleEntry(date: .now, configuration: .smiley, savedTexts: [])
+    SimpleEntry(date: .now, configuration: .starEyes, savedTexts: [
+        SavedText(id: "1", text: "Ejemplo de texto 1"),
+        SavedText(id: "2", text: "Ejemplo de texto 2")
+    ])
 }
